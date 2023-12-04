@@ -29,5 +29,19 @@ with open("input.txt") as input:
     soln = 0
     for line in input:
         splitLine = line.split()
+        red = 0
+        blue = 0
+        green = 0
         for i in range(2, len(splitLine), 2):
-            pass
+            if "red" in splitLine[i+1] and int(splitLine[i]) > red:
+                red = int(splitLine[i])
+                continue
+            if "green" in splitLine[i+1] and int(splitLine[i]) > green:
+                green = int(splitLine[i])
+                continue
+            if "blue" in splitLine[i+1] and int(splitLine[i]) > blue:
+                blue = int(splitLine[i])
+                continue
+        power = red * blue * green
+        soln  += power
+    print(soln)
