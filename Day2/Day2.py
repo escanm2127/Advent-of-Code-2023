@@ -30,3 +30,4 @@ with open("input.txt") as input:
     for line in input:
         splitLine = line.split()
         for i in range(2, len(splitLine), 2):
+            pass
